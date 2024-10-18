@@ -1,0 +1,17 @@
+Comentários sobre o código:
+
+1-UUIDs: O COUNTER_SERVICE_UUID e o COUNTER_CHAR_UUID são identificadores únicos que definem o serviço e a característica Bluetooth LE. 
+Isso permite que dispositivos clientes (por exemplo, smartphones) identifiquem e se conectem ao serviço do contador.
+
+2-CounterCharacteristic: Esta classe representa a característica de contador que permite notificações a clientes conectados. Ela possui os seguintes métodos:
+
+.onSubscribe: É chamado quando um cliente se inscreve para receber notificações. Armazena a função de callback para enviar dados ao cliente.
+.onUnsubscribe: É chamado quando o cliente cancela a inscrição nas notificações.
+.sendNotification: Envia o valor atual do contador para o cliente conectado.
+.start: Inicia o contador, que incrementa a cada segundo, enviando o novo valor ao cliente via notificação.
+.stop: Para o contador.
+
+3-bleno.on("stateChange"): Este evento monitora o estado do adaptador Bluetooth. Quando o adaptador está ligado ('poweredOn'), ele inicia a propaganda do serviço de contador, e quando está desligado, para o serviço e o contador.
+
+4-Eventos de diagnóstico: 
+Vários eventos do Bleno são registrados para fornecer informações sobre o estado do adaptador Bluetooth, a propaganda de serviços, e a configuração dos serviços. Isso facilita o rastreamento e a depuração do processo.

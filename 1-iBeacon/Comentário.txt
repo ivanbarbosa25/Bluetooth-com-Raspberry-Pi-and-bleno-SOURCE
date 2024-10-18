@@ -1,0 +1,12 @@
+Comentários sobre o código:
+
+1-Módulo bleno: Usado para habilitar o Bluetooth em dispositivos para transmitir como um iBeacon.
+
+2-UUID, MAJOR, MINOR, TX_POWER: Esses são os parâmetros usados para configurar o iBeacon. 
+O UUID identifica o beacon, enquanto MAJOR e MINOR podem ser usados para categorizar beacons em diferentes níveis. 
+O TX_POWER define a potência do sinal em dBm.
+
+3-Monitoramento do estado do Bluetooth: O código escuta mudanças no estado do adaptador Bluetooth. 
+Se o Bluetooth estiver ligado ('poweredOn'), ele começa a transmitir o iBeacon. Se não, para a transmissão.
+
+4-Tratamento de erros: O código trata possíveis erros durante o processo de inicialização da transmissão, exibindo mensagens no console.

@@ -1,0 +1,15 @@
+Comentários sobre o código:
+
+1-UUIDs do Serviço e Características: Cada UUID é usado para identificar o serviço e suas características. 
+Aqui, temos um serviço de "calculadora" com três características: dois argumentos e o resultado.
+
+2-ArgumentCharacteristic: Define uma característica Bluetooth que pode receber um valor inteiro (0-255) via escrita. 
+Esse valor representa um dos argumentos da calculadora.
+
+3-ResultCharacteristic: Define uma característica de leitura. Quando lida, ela retorna o resultado do cálculo (a soma dos dois argumentos).
+
+4-Eventos Bleno:
+
+stateChange: Verifica o estado do adaptador Bluetooth (ligado/desligado).
+advertisingStart: Configura os serviços quando a transmissão do Bluetooth LE começa.
+Diversos eventos de diagnóstico são registrados para monitorar o comportamento da aplicação.
